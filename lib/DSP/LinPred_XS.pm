@@ -1,7 +1,7 @@
 package DSP::LinPred_XS;
 use 5.008005;
 use Mouse;
-our $VERSION = "0.01";
+our $VERSION = "0.02";
 use XSLoader;
 XSLoader::load(__PACKAGE__, $VERSION);
 
