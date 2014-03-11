@@ -230,15 +230,11 @@ DSP::LinPred_XS - Linear Prediction
     # mu       : Step size of filter. (default = 0.001)
     #
     # h_length : Filter size. (default = 100)
-    # dc_mode  : Direct Current Component estimation.
-    #            it challenges to estimating DC component when set 1.
-    #            (default = 1 enable)
+    #
     # dc_init  : Initial DC bias.
     #            It *SHOULD* be set value *ACCURATELY* when dc_mode => 0.
     #            (default = 0)
     #
-    # stddev_mode : Step size correction by stddev of input.
-    #               (default = 1 enable)
     # stddev_init : Initial value of stddev.
     #               (default = 1)
     #

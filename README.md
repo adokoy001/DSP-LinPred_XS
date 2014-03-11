@@ -10,15 +10,11 @@ DSP::LinPred\_XS - Linear Prediction
     # mu       : Step size of filter. (default = 0.001)
     #
     # h_length : Filter size. (default = 100)
-    # dc_mode  : Direct Current Component estimation.
-    #            it challenges to estimating DC component when set 1.
-    #            (default = 1 enable)
+    #
     # dc_init  : Initial DC bias.
     #            It *SHOULD* be set value *ACCURATELY* when dc_mode => 0.
     #            (default = 0)
     #
-    # stddev_mode : Step size correction by stddev of input.
-    #               (default = 1 enable)
     # stddev_init : Initial value of stddev.
     #               (default = 1)
     #
@@ -130,28 +126,6 @@ This method can calculate standard deviation of current filter.
     # Get value of current standard deviation of inputs.
     my $stddev = $lp->dc;
     print 'Current STDDEV : '.$stddev, "\n";
-
-# EXPERIMENTAL OPTIONS
-
-## _iir\_mode_ and _iir\_a_
-
-In _set\_filter_ option.
-if set iir\_mode to 1, and iir\_a, it challenges to calculate DC value and stddev by using IIR filter.
-
-IIR spec: 
-next\_dc = (current\_input - iir\_a \* current\_dc) / (1 - iir\_a)
-
-next\_stddev = (abs(current\_input - current\_dc) - iir\_a \* current\_stddev) / (1 - iir\_a)
-
-    # set_filter with iir_mode on.
-    $lp->set_filter({
-                     mu => 0.001,
-                     filter_length => 500,
-                     dc_mode => 1,
-                     stddev_mode => 1,
-                     iir_mode => 1,
-                     iir_a => 0.01
-                    });
 
 # LICENSE
 

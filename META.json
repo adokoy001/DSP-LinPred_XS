@@ -53,5 +53,19 @@
       }
    },
    "release_status" : "unstable",
-   "version" : "0.01"
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/adokoy001/DSP-LinPred_XS/issues"
+      },
+      "homepage" : "https://github.com/adokoy001/DSP-LinPred_XS",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/adokoy001/DSP-LinPred_XS.git",
+         "web" : "https://github.com/adokoy001/DSP-LinPred_XS"
+      }
+   },
+   "version" : "0.01",
+   "x_contributors" : [
+      "Toshiaki Yokoda <yokoda@ub12.04svr>"
+   ]
 }
