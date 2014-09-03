@@ -1,7 +1,7 @@
 package DSP::LinPred_XS;
 use 5.008005;
 use Mouse;
-our $VERSION = "0.02";
+our $VERSION = "0.03";
 use XSLoader;
 XSLoader::load(__PACKAGE__, $VERSION);
 
@@ -119,7 +119,7 @@ sub predict{
   my $h = $self->h;
   my $x_stack = $self->x_stack;
   my $estimated;
-  for(1 .. $predict_num){
+  for(0 .. $predict_num){
     my $x_est = 0;
     for( my $k = 0; $k <= $#{$h} and $k <= $self->x_count; $k++){
       $x_est += $h->[$k] * ($x_stack->[$k] - $self->dc);
@@ -129,6 +129,7 @@ sub predict{
     push(@$estimated,$x_est);
     pop(@$x_stack);
   }
+  shift(@$estimated);
   return($estimated);
 }
 

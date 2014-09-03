@@ -43,7 +43,7 @@ DSP::LinPred\_XS - Linear Prediction
 # DESCRIPTION
 
 DSP::LinPred\_XS is Linear Prediction by Least Mean Squared Algorithm.
-Impremented by XS.
+Implemented by XS.
 
 This Linear Predicting method can estimate the standard deviation, direct current component, and predict future value of input.
 
